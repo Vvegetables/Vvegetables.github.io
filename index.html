@@ -159,7 +159,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -199,6 +199,379 @@
       
 
       
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vvegetables.github.io/2020/10/30/cat/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chongxu Zhao">
+      <meta itemprop="description" content="personal blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The way to CODE">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/30/cat/" class="post-title-link" itemprop="url">cat</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2020-10-30 11:30:18 / 修改时间：11:41:53" itemprop="dateCreated datePublished" datetime="2020-10-30T11:30:18+08:00">2020-10-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
+<p>cat命令的用途是连接文件或标准输入并打印。这个命令常用来显示文件内容，或者将几个文件连接起来显示，或者从标准输入读取内容并显示，它常与重定向符号配合使用。</p>
+</blockquote>
+<h3 id="命令功能"><a href="#命令功能" class="headerlink" title="命令功能"></a>命令功能</h3><ol>
+<li>一次显示整个文件: cat filename</li>
+<li>从键盘创建一个文件：cat &gt; filename (只能创建新文件，不能编辑已经存在的文件)</li>
+<li>将几个文件合并未一个文件：cat file1 file2 &gt; file3<h4 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h4></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-A, –show-all</td>
+<td>等价于 -vET</td>
+</tr>
+<tr>
+<td>-b, –number-nonblank</td>
+<td>对非空输出行编号</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>等价于 -vE</td>
+</tr>
+<tr>
+<td>-E, –show-ends</td>
+<td>在每行结束处显示 $</td>
+</tr>
+<tr>
+<td>-n, –number</td>
+<td>对输出的所有行编号,由1开始对所有输出的行数编号</td>
+</tr>
+<tr>
+<td>-s, –squeeze-blank</td>
+<td>有连续两行以上的空白行，就代换为一行的空白行</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>与 -vT 等价</td>
+</tr>
+<tr>
+<td>-T, –show-tabs</td>
+<td>将跳格字符显示为 ^I</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>(被忽略)</td>
+</tr>
+<tr>
+<td>-v, –show-nonprinting</td>
+<td>使用 ^ 和 M- 引用，除了 LFD 和 TAB 之外</td>
+</tr>
+</tbody></table>
+<h3 id="DEMO"><a href="#DEMO" class="headerlink" title="DEMO"></a>DEMO</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> cat &gt;log.txt &lt;&lt;EOF</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> Hello</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> World</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> Linux</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> PWD=$(<span class="built_in">pwd</span>)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> EOF</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat -n log2012.log &gt; log.log</span><br></pre></td></tr></table></figure>
+
+<h3 id="tac-反向列示"><a href="#tac-反向列示" class="headerlink" title="tac (反向列示)"></a>tac (反向列示)</h3><blockquote>
+<p>tac 是将 cat 反写过来，所以他的功能就跟 cat 相反， cat 是由第一行到最后一行连续显示在萤幕上，而 tac 则是由最后一行到第一行反向在萤幕上显示出来！</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vvegetables.github.io/2020/10/26/cp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chongxu Zhao">
+      <meta itemprop="description" content="personal blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The way to CODE">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/26/cp/" class="post-title-link" itemprop="url">cp</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2020-10-26 13:36:47 / 修改时间：13:43:37" itemprop="dateCreated datePublished" datetime="2020-10-26T13:36:47+08:00">2020-10-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
+<p>cp命令可以理解为英文单词copy的缩写，其功能为复制文件或目录。cp命令可以将多个文件复制到一个具体的文件名或一个已经存在的目录下，也可以同时复制多个文件到一个指定的目录中。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">常用参数</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-f</td>
+<td>若目标文件已存在，则会直接覆盖原文件</td>
+</tr>
+<tr>
+<td align="left">-i</td>
+<td>若目标文件已存在，则会询问是否覆盖</td>
+</tr>
+<tr>
+<td align="left">-p</td>
+<td>保留源文件或目录的所有属性</td>
+</tr>
+<tr>
+<td align="left">-r</td>
+<td>递归复制文件和目录</td>
+</tr>
+<tr>
+<td align="left">-d</td>
+<td>当复制符号连接时，把目标文件或目录也建立为符号连接，并指向与源文件或目录连接的原始文件或目录</td>
+</tr>
+<tr>
+<td align="left">-l</td>
+<td>对源文件建立硬连接，而非复制文件</td>
+</tr>
+<tr>
+<td align="left">-s</td>
+<td>对源文件建立符号连接，而非复制文件</td>
+</tr>
+<tr>
+<td align="left">-b</td>
+<td>覆盖已存在的文件目标前将目标文件备份</td>
+</tr>
+<tr>
+<td align="left">-v</td>
+<td>详细显示cp命令执行的操作过程</td>
+</tr>
+<tr>
+<td align="left">-a</td>
+<td>等价于“dpr”选项</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vvegetables.github.io/2020/10/26/shell-params/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chongxu Zhao">
+      <meta itemprop="description" content="personal blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The way to CODE">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/26/shell-params/" class="post-title-link" itemprop="url">shell params</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2020-10-26 10:46:41 / 修改时间：10:55:02" itemprop="dateCreated datePublished" datetime="2020-10-26T10:46:41+08:00">2020-10-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
+<p>shell 脚本中的参数</p>
+</blockquote>
+<ol>
+<li>$0<blockquote>
+<p>当前脚本的文件名</p>
+</blockquote>
+</li>
+<li>$n<blockquote>
+<p>传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。第十二个参数${12}</p>
+</blockquote>
+</li>
+<li>$#<blockquote>
+<p>传递给脚本或者函数的参数个数</p>
+</blockquote>
+</li>
+<li>$*<blockquote>
+<p>传递给脚本或者函数的所有参数</p>
+</blockquote>
+</li>
+<li>$@<blockquote>
+<p>传递给脚本或者函数的所有参数</p>
+</blockquote>
+</li>
+<li>$*$@的区别<blockquote>
+<p>$* 和 $@ 都表示传递给函数或脚本的所有参数，不被双引号(“ “)包含时，都以”$1” “$2” …”$n” 的形式输出所有参数;当它们被双引号(“ “)包含时，”$*” 会将所有的参数作为一个整体，以”$1 $2 … $n”;的形式输出所有参数。”@” 会将各个参数分开，以”$1” “$2” … “$n” 的形式输出所有参数。</p>
+</blockquote>
+</li>
+<li>$?<blockquote>
+<p>上个命令的退出状态，或函数的返回值</p>
+</blockquote>
+</li>
+<li>$$<blockquote>
+<p>当前shell进程ID。对于shell脚本，就是这些脚本所在的进程ID</p>
+</blockquote>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
     
 
 

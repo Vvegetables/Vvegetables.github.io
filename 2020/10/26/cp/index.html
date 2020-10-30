@@ -22,18 +22,21 @@
     var CONFIG = {"hostname":"vvegetables.github.io","root":"/","scheme":"Muse","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 
-  <meta name="description" content="personal blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="The way to CODE">
-<meta property="og:url" content="https://vvegetables.github.io/tags/%E7%AE%97%E6%B3%95/index.html">
+  <meta name="description" content="简介 cp命令可以理解为英文单词copy的缩写，其功能为复制文件或目录。cp命令可以将多个文件复制到一个具体的文件名或一个已经存在的目录下，也可以同时复制多个文件到一个指定的目录中。     常用参数 解释    -f 若目标文件已存在，则会直接覆盖原文件   -i 若目标文件已存在，则会询问是否覆盖   -p 保留源文件或目录的所有属性   -r 递归复制文件和目录   -d 当复制符号连接时，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cp">
+<meta property="og:url" content="https://vvegetables.github.io/2020/10/26/cp/index.html">
 <meta property="og:site_name" content="The way to CODE">
-<meta property="og:description" content="personal blog">
+<meta property="og:description" content="简介 cp命令可以理解为英文单词copy的缩写，其功能为复制文件或目录。cp命令可以将多个文件复制到一个具体的文件名或一个已经存在的目录下，也可以同时复制多个文件到一个指定的目录中。     常用参数 解释    -f 若目标文件已存在，则会直接覆盖原文件   -i 若目标文件已存在，则会询问是否覆盖   -p 保留源文件或目录的所有属性   -r 递归复制文件和目录   -d 当复制符号连接时，">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-26T05:36:47.000Z">
+<meta property="article:modified_time" content="2020-10-26T05:43:37.173Z">
 <meta property="article:author" content="Chongxu Zhao">
+<meta property="article:tag" content="每天一个Linux命令">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://vvegetables.github.io/tags/%E7%AE%97%E6%B3%95/">
+<link rel="canonical" href="https://vvegetables.github.io/2020/10/26/cp/">
 
 
 <script class="page-configurations">
@@ -41,12 +44,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: 算法 | The way to CODE</title>
+  <title>cp | The way to CODE</title>
   
 
 
@@ -135,7 +138,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -147,6 +150,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -195,54 +199,149 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
       
 
       
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h2 class="collection-header">算法
-          <small>标签</small>
-        </h2>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vvegetables.github.io/2020/10/26/cp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chongxu Zhao">
+      <meta itemprop="description" content="personal blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The way to CODE">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          cp
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+
+      <time title="创建时间：2020-10-26 13:36:47 / 修改时间：13:43:37" itemprop="dateCreated datePublished" datetime="2020-10-26T13:36:47+08:00">2020-10-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
+<p>cp命令可以理解为英文单词copy的缩写，其功能为复制文件或目录。cp命令可以将多个文件复制到一个具体的文件名或一个已经存在的目录下，也可以同时复制多个文件到一个指定的目录中。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">常用参数</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-f</td>
+<td>若目标文件已存在，则会直接覆盖原文件</td>
+</tr>
+<tr>
+<td align="left">-i</td>
+<td>若目标文件已存在，则会询问是否覆盖</td>
+</tr>
+<tr>
+<td align="left">-p</td>
+<td>保留源文件或目录的所有属性</td>
+</tr>
+<tr>
+<td align="left">-r</td>
+<td>递归复制文件和目录</td>
+</tr>
+<tr>
+<td align="left">-d</td>
+<td>当复制符号连接时，把目标文件或目录也建立为符号连接，并指向与源文件或目录连接的原始文件或目录</td>
+</tr>
+<tr>
+<td align="left">-l</td>
+<td>对源文件建立硬连接，而非复制文件</td>
+</tr>
+<tr>
+<td align="left">-s</td>
+<td>对源文件建立符号连接，而非复制文件</td>
+</tr>
+<tr>
+<td align="left">-b</td>
+<td>覆盖已存在的文件目标前将目标文件备份</td>
+</tr>
+<tr>
+<td align="left">-v</td>
+<td>详细显示cp命令执行的操作过程</td>
+</tr>
+<tr>
+<td align="left">-a</td>
+<td>等价于“dpr”选项</td>
+</tr>
+</tbody></table>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-10-11T21:21:57+08:00"
-              content="2020-10-11">
-          10-11
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/11/bag/" itemprop="url">
-            <span itemprop="name">01背包问题</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%AF%8F%E5%A4%A9%E4%B8%80%E4%B8%AALinux%E5%91%BD%E4%BB%A4/" rel="tag"># 每天一个Linux命令</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/10/26/shell-params/" rel="prev" title="shell params">
+                  <i class="fa fa-chevron-left"></i> shell params
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/10/30/cat/" rel="next" title="cat">
+                  cat <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
-  </div>
-  
-  
-  
 
-  
+
 
 
 
