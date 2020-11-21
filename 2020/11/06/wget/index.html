@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"vvegetables.github.io","root":"/","scheme":"Muse","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+
+  <meta name="description" content="简介 wget 是一个从网络上自动下载文件的自由工具，支持通过 HTTP、HTTPS、FTP 三个最常见的 TCP&#x2F;IP协议 下载，并可以使用 HTTP 代理。”wget” 这个名称来源于 “World Wide Web” 与 “get” 的结合。  参数GNU Wget 1.14，非交互式的网络文件下载工具。用法： wget [选项]… [URL]… 启动：  -V,  –version">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wget">
+<meta property="og:url" content="https://vvegetables.github.io/2020/11/06/wget/index.html">
+<meta property="og:site_name" content="The way to CODE">
+<meta property="og:description" content="简介 wget 是一个从网络上自动下载文件的自由工具，支持通过 HTTP、HTTPS、FTP 三个最常见的 TCP&#x2F;IP协议 下载，并可以使用 HTTP 代理。”wget” 这个名称来源于 “World Wide Web” 与 “get” 的结合。  参数GNU Wget 1.14，非交互式的网络文件下载工具。用法： wget [选项]… [URL]… 启动：  -V,  –version">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-06T07:22:51.000Z">
+<meta property="article:modified_time" content="2020-11-06T07:52:16.061Z">
+<meta property="article:author" content="Chongxu Zhao">
+<meta property="article:tag" content="每天一个Linux命令">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://vvegetables.github.io/2020/11/06/wget/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>wget | The way to CODE</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">The way to CODE</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">practice code every day</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">参数</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%EF%BC%9A"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">启动：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%97%A5%E5%BF%97%E5%92%8C%E8%BE%93%E5%85%A5%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">日志和输入文件：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%EF%BC%9A"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">下载：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%EF%BC%9A"><span class="nav-number">2.0.0.4.</span> <span class="nav-text">目录：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#HTTP-%E9%80%89%E9%A1%B9%EF%BC%9A"><span class="nav-number">2.0.0.5.</span> <span class="nav-text">HTTP 选项：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#HTTPS-SSL-TLS-%E9%80%89%E9%A1%B9%EF%BC%9A"><span class="nav-number">2.0.0.6.</span> <span class="nav-text">HTTPS (SSL&#x2F;TLS) 选项：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#FTP-%E9%80%89%E9%A1%B9%EF%BC%9A"><span class="nav-number">2.0.0.7.</span> <span class="nav-text">FTP 选项：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#WARC-options"><span class="nav-number">2.0.0.8.</span> <span class="nav-text">WARC options:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E4%B8%8B%E8%BD%BD%EF%BC%9A"><span class="nav-number">2.0.0.9.</span> <span class="nav-text">递归下载：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E6%8E%A5%E5%8F%97-%E6%8B%92%E7%BB%9D%EF%BC%9A"><span class="nav-number">2.0.0.10.</span> <span class="nav-text">递归接受&#x2F;拒绝：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#demo"><span class="nav-number">3.</span> <span class="nav-text">demo</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chongxu Zhao</p>
+  <div class="site-description" itemprop="description">personal blog</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vvegetables.github.io/2020/11/06/wget/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chongxu Zhao">
+      <meta itemprop="description" content="personal blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The way to CODE">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          wget
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2020-11-06 15:22:51 / 修改时间：15:52:16" itemprop="dateCreated datePublished" datetime="2020-11-06T15:22:51+08:00">2020-11-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
+<p>wget 是一个从网络上自动下载文件的自由工具，支持通过 HTTP、HTTPS、FTP 三个最常见的 TCP/IP协议 下载，并可以使用 HTTP 代理。”wget” 这个名称来源于 “World Wide Web” 与 “get” 的结合。</p>
+</blockquote>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>GNU Wget 1.14，非交互式的网络文件下载工具。<br>用法： wget [选项]… [URL]…</p>
+<h6 id="启动："><a href="#启动：" class="headerlink" title="启动："></a>启动：</h6><p>  -V,  –version           显示 Wget 的版本信息并退出。<br>  -h,  –help              打印此帮助。<br>  -b,  –background        启动后转入后台。<br>  -e,  –execute=COMMAND   运行一个“.wgetrc”风格的命令。</p>
+<h6 id="日志和输入文件："><a href="#日志和输入文件：" class="headerlink" title="日志和输入文件："></a>日志和输入文件：</h6><p>  -o,  –output-file=FILE    将日志信息写入 FILE。<br>  -a,  –append-output=FILE  将信息添加至 FILE。<br>  -d,  –debug               打印大量调试信息。<br>  -q,  –quiet               安静模式 (无信息输出)。<br>  -v,  –verbose             详尽的输出 (此为默认值)。<br>  -nv, –no-verbose          关闭详尽输出，但不进入安静模式。<br>       –report-speed=TYPE   Output bandwidth as TYPE.  TYPE can be bits.<br>  -i,  –input-file=FILE     下载本地或外部 FILE 中的 URLs。<br>  -F,  –force-html          把输入文件当成 HTML 文件。<br>  -B,  –base=URL            解析与 URL 相关的<br>                             HTML 输入文件 (由 -i -F 选项指定)。<br>       –config=FILE         Specify config file to use.</p>
+<h6 id="下载："><a href="#下载：" class="headerlink" title="下载："></a>下载：</h6><p>  -t,  –tries=NUMBER            设置重试次数为 NUMBER (0 代表无限制)。<br>       –retry-connrefused       即使拒绝连接也是重试。<br>  -O,  –output-document=FILE    将文档写入 FILE。<br>  -nc, –no-clobber              skip downloads that would download to<br>                                 existing files (overwriting them).<br>  -c,  –continue                断点续传下载文件。<br>       –progress=TYPE           选择进度条类型。<br>  -N,  –timestamping            只获取比本地文件新的文件。<br>  –no-use-server-timestamps     不用服务器上的时间戳来设置本地文件。<br>  -S,  –server-response         打印服务器响应。<br>       –spider                  不下载任何文件。<br>  -T,  –timeout=SECONDS         将所有超时设为 SECONDS 秒。<br>       –dns-timeout=SECS        设置 DNS 查寻超时为 SECS 秒。<br>       –connect-timeout=SECS    设置连接超时为 SECS 秒。<br>       –read-timeout=SECS       设置读取超时为 SECS 秒。<br>  -w,  –wait=SECONDS            等待间隔为 SECONDS 秒。<br>       –waitretry=SECONDS       在获取文件的重试期间等待 1..SECONDS 秒。<br>       –random-wait             获取多个文件时，每次随机等待间隔<br>                                 0.5<em>WAIT…1.5</em>WAIT 秒。<br>       –no-proxy                禁止使用代理。<br>  -Q,  –quota=NUMBER            设置获取配额为 NUMBER 字节。<br>       –bind-address=ADDRESS    绑定至本地主机上的 ADDRESS (主机名或是 IP)。<br>       –limit-rate=RATE         限制下载速率为 RATE。<br>       –no-dns-cache            关闭 DNS 查寻缓存。<br>       –restrict-file-names=OS  限定文件名中的字符为 OS 允许的字符。<br>       –ignore-case             匹配文件/目录时忽略大小写。<br>  -4,  –inet4-only              仅连接至 IPv4 地址。<br>  -6,  –inet6-only              仅连接至 IPv6 地址。<br>       –prefer-family=FAMILY    首先连接至指定协议的地址<br>                                 FAMILY 为 IPv6，IPv4 或是 none。<br>       –user=USER               将 ftp 和 http 的用户名均设置为 USER。<br>       –password=PASS           将 ftp 和 http 的密码均设置为 PASS。<br>       –ask-password            提示输入密码。<br>       –no-iri                  关闭 IRI 支持。<br>       –local-encoding=ENC      IRI (国际化资源标识符) 使用 ENC 作为本地编码。<br>       –remote-encoding=ENC     使用 ENC 作为默认远程编码。<br>       –unlink                  remove file before clobber.</p>
+<h6 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h6><p>  -nd, –no-directories           不创建目录。<br>  -x,  –force-directories        强制创建目录。<br>  -nH, –no-host-directories      不要创建主目录。<br>       –protocol-directories     在目录中使用协议名称。<br>  -P,  –directory-prefix=PREFIX  以 PREFIX/… 保存文件<br>       –cut-dirs=NUMBER          忽略远程目录中 NUMBER 个目录层。</p>
+<h6 id="HTTP-选项："><a href="#HTTP-选项：" class="headerlink" title="HTTP 选项："></a>HTTP 选项：</h6><pre><code>   --http-user=USER        设置 http 用户名为 USER。
+   --http-password=PASS    设置 http 密码为 PASS。
+   --no-cache              不在服务器上缓存数据。
+   --default-page=NAME     改变默认页
+                           (默认页通常是“index.html”)。</code></pre>
+<p>  -E,  –adjust-extension      以合适的扩展名保存 HTML/CSS 文档。<br>       –ignore-length         忽略头部的‘Content-Length’区域。<br>       –header=STRING         在头部插入 STRING。<br>       –max-redirect          每页所允许的最大重定向。<br>       –proxy-user=USER       使用 USER 作为代理用户名。<br>       –proxy-password=PASS   使用 PASS 作为代理密码。<br>       –referer=URL           在 HTTP 请求头包含‘Referer: URL’。<br>       –save-headers          将 HTTP 头保存至文件。<br>  -U,  –user-agent=AGENT      标识为 AGENT 而不是 Wget/VERSION。<br>       –no-http-keep-alive    禁用 HTTP keep-alive (永久连接)。<br>       –no-cookies            不使用 cookies。<br>       –load-cookies=FILE     会话开始前从 FILE 中载入 cookies。<br>       –save-cookies=FILE     会话结束后保存 cookies 至 FILE。<br>       –keep-session-cookies  载入并保存会话 (非永久) cookies。<br>       –post-data=STRING      使用 POST 方式；把 STRING 作为数据发送。<br>       –post-file=FILE        使用 POST 方式；发送 FILE 内容。<br>       –content-disposition   当选中本地文件名时<br>                               允许 Content-Disposition 头部 (尚在实验)。<br>       –content-on-error      output the received content on server errors.<br>       –auth-no-challenge     发送不含服务器询问的首次等待<br>                               的基本 HTTP 验证信息。</p>
+<h6 id="HTTPS-SSL-TLS-选项："><a href="#HTTPS-SSL-TLS-选项：" class="headerlink" title="HTTPS (SSL/TLS) 选项："></a>HTTPS (SSL/TLS) 选项：</h6><pre><code>   --secure-protocol=PR     choose secure protocol, one of auto, SSLv2,
+                            SSLv3, TLSv1, TLSv1_1 and TLSv1_2.
+   --no-check-certificate   不要验证服务器的证书。
+   --certificate=FILE       客户端证书文件。
+   --certificate-type=TYPE  客户端证书类型，PEM 或 DER。
+   --private-key=FILE       私钥文件。
+   --private-key-type=TYPE  私钥文件类型，PEM 或 DER。
+   --ca-certificate=FILE    带有一组 CA 认证的文件。
+   --ca-directory=DIR       保存 CA 认证的哈希列表的目录。
+   --random-file=FILE       带有生成 SSL PRNG 的随机数据的文件。
+   --egd-file=FILE          用于命名带有随机数据的 EGD 套接字的文件。</code></pre>
+<h6 id="FTP-选项："><a href="#FTP-选项：" class="headerlink" title="FTP 选项："></a>FTP 选项：</h6><pre><code>   --ftp-user=USER         设置 ftp 用户名为 USER。
+   --ftp-password=PASS     设置 ftp 密码为 PASS。
+   --no-remove-listing     不要删除‘.listing’文件。
+   --no-glob               不在 FTP 文件名中使用通配符展开。
+   --no-passive-ftp        禁用“passive”传输模式。
+   --preserve-permissions  保留远程文件的权限。
+   --retr-symlinks         递归目录时，获取链接的文件 (而非目录)。</code></pre>
+<h6 id="WARC-options"><a href="#WARC-options" class="headerlink" title="WARC options:"></a>WARC options:</h6><pre><code>   --warc-file=FILENAME      save request/response data to a .warc.gz file.
+   --warc-header=STRING      insert STRING into the warcinfo record.
+   --warc-max-size=NUMBER    set maximum size of WARC files to NUMBER.
+   --warc-cdx                write CDX index files.
+   --warc-dedup=FILENAME     do not store records listed in this CDX file.
+   --no-warc-compression     do not compress WARC files with GZIP.
+   --no-warc-digests         do not calculate SHA1 digests.
+   --no-warc-keep-log        do not store the log file in a WARC record.
+   --warc-tempdir=DIRECTORY  location for temporary files created by the
+                             WARC writer.</code></pre>
+<h6 id="递归下载："><a href="#递归下载：" class="headerlink" title="递归下载："></a>递归下载：</h6><p>  -r,  –recursive          指定递归下载。<br>  -l,  –level=NUMBER       最大递归深度 (inf 或 0 代表无限制，即全部下载)。<br>       –delete-after       下载完成后删除本地文件。<br>  -k,  –convert-links      让下载得到的 HTML 或 CSS 中的链接指向本地文件。<br>  –backups=N   before writing file X, rotate up to N backup files.<br>  -K,  –backup-converted   在转换文件 X 前先将它备份为 X.orig。<br>  -m,  –mirror             -N -r -l inf –no-remove-listing 的缩写形式。<br>  -p,  –page-requisites    下载所有用于显示 HTML 页面的图片之类的元素。<br>       –strict-comments    用严格方式 (SGML) 处理 HTML 注释。</p>
+<h6 id="递归接受-拒绝："><a href="#递归接受-拒绝：" class="headerlink" title="递归接受/拒绝："></a>递归接受/拒绝：</h6><p>  -A,  –accept=LIST               逗号分隔的可接受的扩展名列表。<br>  -R,  –reject=LIST               逗号分隔的要拒绝的扩展名列表。<br>       –accept-regex=REGEX        regex matching accepted URLs.<br>       –reject-regex=REGEX        regex matching rejected URLs.<br>       –regex-type=TYPE           regex type (posix|pcre).<br>  -D,  –domains=LIST              逗号分隔的可接受的域列表。<br>       –exclude-domains=LIST      逗号分隔的要拒绝的域列表。<br>       –follow-ftp                跟踪 HTML 文档中的 FTP 链接。<br>       –follow-tags=LIST          逗号分隔的跟踪的 HTML 标识列表。<br>       –ignore-tags=LIST          逗号分隔的忽略的 HTML 标识列表。<br>  -H,  –span-hosts                递归时转向外部主机。<br>  -L,  –relative                  只跟踪有关系的链接。<br>  -I,  –include-directories=LIST  允许目录的列表。<br>  –trust-server-names             use the name specified by the redirection<br>                                   url last component.<br>  -X,  –exclude-directories=LIST  排除目录的列表。<br>  -np, –no-parent                 不追溯至父目录。</p>
+<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget -O wordpress.tar.gz  http://cn.wordpress.org/wordpress-4.9.4-zh_CN.tar.gz</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用 wget -O 下载并以不同的文件名保存</span></span><br><span class="line"></span><br><span class="line">wget –spider url</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用 wget –spider 测试下载链接</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sx66/p/11887022.html">来源链接</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%AF%8F%E5%A4%A9%E4%B8%80%E4%B8%AALinux%E5%91%BD%E4%BB%A4/" rel="tag"># 每天一个Linux命令</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/11/06/scp/" rel="prev" title="scp">
+                  <i class="fa fa-chevron-left"></i> scp
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chongxu Zhao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

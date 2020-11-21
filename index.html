@@ -159,7 +159,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -199,6 +199,225 @@
       
 
       
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vvegetables.github.io/2020/11/06/wget/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chongxu Zhao">
+      <meta itemprop="description" content="personal blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The way to CODE">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/06/wget/" class="post-title-link" itemprop="url">wget</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2020-11-06 15:22:51 / 修改时间：15:52:16" itemprop="dateCreated datePublished" datetime="2020-11-06T15:22:51+08:00">2020-11-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
+<p>wget 是一个从网络上自动下载文件的自由工具，支持通过 HTTP、HTTPS、FTP 三个最常见的 TCP/IP协议 下载，并可以使用 HTTP 代理。”wget” 这个名称来源于 “World Wide Web” 与 “get” 的结合。</p>
+</blockquote>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>GNU Wget 1.14，非交互式的网络文件下载工具。<br>用法： wget [选项]… [URL]…</p>
+<h6 id="启动："><a href="#启动：" class="headerlink" title="启动："></a>启动：</h6><p>  -V,  –version           显示 Wget 的版本信息并退出。<br>  -h,  –help              打印此帮助。<br>  -b,  –background        启动后转入后台。<br>  -e,  –execute=COMMAND   运行一个“.wgetrc”风格的命令。</p>
+<h6 id="日志和输入文件："><a href="#日志和输入文件：" class="headerlink" title="日志和输入文件："></a>日志和输入文件：</h6><p>  -o,  –output-file=FILE    将日志信息写入 FILE。<br>  -a,  –append-output=FILE  将信息添加至 FILE。<br>  -d,  –debug               打印大量调试信息。<br>  -q,  –quiet               安静模式 (无信息输出)。<br>  -v,  –verbose             详尽的输出 (此为默认值)。<br>  -nv, –no-verbose          关闭详尽输出，但不进入安静模式。<br>       –report-speed=TYPE   Output bandwidth as TYPE.  TYPE can be bits.<br>  -i,  –input-file=FILE     下载本地或外部 FILE 中的 URLs。<br>  -F,  –force-html          把输入文件当成 HTML 文件。<br>  -B,  –base=URL            解析与 URL 相关的<br>                             HTML 输入文件 (由 -i -F 选项指定)。<br>       –config=FILE         Specify config file to use.</p>
+<h6 id="下载："><a href="#下载：" class="headerlink" title="下载："></a>下载：</h6><p>  -t,  –tries=NUMBER            设置重试次数为 NUMBER (0 代表无限制)。<br>       –retry-connrefused       即使拒绝连接也是重试。<br>  -O,  –output-document=FILE    将文档写入 FILE。<br>  -nc, –no-clobber              skip downloads that would download to<br>                                 existing files (overwriting them).<br>  -c,  –continue                断点续传下载文件。<br>       –progress=TYPE           选择进度条类型。<br>  -N,  –timestamping            只获取比本地文件新的文件。<br>  –no-use-server-timestamps     不用服务器上的时间戳来设置本地文件。<br>  -S,  –server-response         打印服务器响应。<br>       –spider                  不下载任何文件。<br>  -T,  –timeout=SECONDS         将所有超时设为 SECONDS 秒。<br>       –dns-timeout=SECS        设置 DNS 查寻超时为 SECS 秒。<br>       –connect-timeout=SECS    设置连接超时为 SECS 秒。<br>       –read-timeout=SECS       设置读取超时为 SECS 秒。<br>  -w,  –wait=SECONDS            等待间隔为 SECONDS 秒。<br>       –waitretry=SECONDS       在获取文件的重试期间等待 1..SECONDS 秒。<br>       –random-wait             获取多个文件时，每次随机等待间隔<br>                                 0.5<em>WAIT…1.5</em>WAIT 秒。<br>       –no-proxy                禁止使用代理。<br>  -Q,  –quota=NUMBER            设置获取配额为 NUMBER 字节。<br>       –bind-address=ADDRESS    绑定至本地主机上的 ADDRESS (主机名或是 IP)。<br>       –limit-rate=RATE         限制下载速率为 RATE。<br>       –no-dns-cache            关闭 DNS 查寻缓存。<br>       –restrict-file-names=OS  限定文件名中的字符为 OS 允许的字符。<br>       –ignore-case             匹配文件/目录时忽略大小写。<br>  -4,  –inet4-only              仅连接至 IPv4 地址。<br>  -6,  –inet6-only              仅连接至 IPv6 地址。<br>       –prefer-family=FAMILY    首先连接至指定协议的地址<br>                                 FAMILY 为 IPv6，IPv4 或是 none。<br>       –user=USER               将 ftp 和 http 的用户名均设置为 USER。<br>       –password=PASS           将 ftp 和 http 的密码均设置为 PASS。<br>       –ask-password            提示输入密码。<br>       –no-iri                  关闭 IRI 支持。<br>       –local-encoding=ENC      IRI (国际化资源标识符) 使用 ENC 作为本地编码。<br>       –remote-encoding=ENC     使用 ENC 作为默认远程编码。<br>       –unlink                  remove file before clobber.</p>
+<h6 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h6><p>  -nd, –no-directories           不创建目录。<br>  -x,  –force-directories        强制创建目录。<br>  -nH, –no-host-directories      不要创建主目录。<br>       –protocol-directories     在目录中使用协议名称。<br>  -P,  –directory-prefix=PREFIX  以 PREFIX/… 保存文件<br>       –cut-dirs=NUMBER          忽略远程目录中 NUMBER 个目录层。</p>
+<h6 id="HTTP-选项："><a href="#HTTP-选项：" class="headerlink" title="HTTP 选项："></a>HTTP 选项：</h6><pre><code>   --http-user=USER        设置 http 用户名为 USER。
+   --http-password=PASS    设置 http 密码为 PASS。
+   --no-cache              不在服务器上缓存数据。
+   --default-page=NAME     改变默认页
+                           (默认页通常是“index.html”)。</code></pre>
+<p>  -E,  –adjust-extension      以合适的扩展名保存 HTML/CSS 文档。<br>       –ignore-length         忽略头部的‘Content-Length’区域。<br>       –header=STRING         在头部插入 STRING。<br>       –max-redirect          每页所允许的最大重定向。<br>       –proxy-user=USER       使用 USER 作为代理用户名。<br>       –proxy-password=PASS   使用 PASS 作为代理密码。<br>       –referer=URL           在 HTTP 请求头包含‘Referer: URL’。<br>       –save-headers          将 HTTP 头保存至文件。<br>  -U,  –user-agent=AGENT      标识为 AGENT 而不是 Wget/VERSION。<br>       –no-http-keep-alive    禁用 HTTP keep-alive (永久连接)。<br>       –no-cookies            不使用 cookies。<br>       –load-cookies=FILE     会话开始前从 FILE 中载入 cookies。<br>       –save-cookies=FILE     会话结束后保存 cookies 至 FILE。<br>       –keep-session-cookies  载入并保存会话 (非永久) cookies。<br>       –post-data=STRING      使用 POST 方式；把 STRING 作为数据发送。<br>       –post-file=FILE        使用 POST 方式；发送 FILE 内容。<br>       –content-disposition   当选中本地文件名时<br>                               允许 Content-Disposition 头部 (尚在实验)。<br>       –content-on-error      output the received content on server errors.<br>       –auth-no-challenge     发送不含服务器询问的首次等待<br>                               的基本 HTTP 验证信息。</p>
+<h6 id="HTTPS-SSL-TLS-选项："><a href="#HTTPS-SSL-TLS-选项：" class="headerlink" title="HTTPS (SSL/TLS) 选项："></a>HTTPS (SSL/TLS) 选项：</h6><pre><code>   --secure-protocol=PR     choose secure protocol, one of auto, SSLv2,
+                            SSLv3, TLSv1, TLSv1_1 and TLSv1_2.
+   --no-check-certificate   不要验证服务器的证书。
+   --certificate=FILE       客户端证书文件。
+   --certificate-type=TYPE  客户端证书类型，PEM 或 DER。
+   --private-key=FILE       私钥文件。
+   --private-key-type=TYPE  私钥文件类型，PEM 或 DER。
+   --ca-certificate=FILE    带有一组 CA 认证的文件。
+   --ca-directory=DIR       保存 CA 认证的哈希列表的目录。
+   --random-file=FILE       带有生成 SSL PRNG 的随机数据的文件。
+   --egd-file=FILE          用于命名带有随机数据的 EGD 套接字的文件。</code></pre>
+<h6 id="FTP-选项："><a href="#FTP-选项：" class="headerlink" title="FTP 选项："></a>FTP 选项：</h6><pre><code>   --ftp-user=USER         设置 ftp 用户名为 USER。
+   --ftp-password=PASS     设置 ftp 密码为 PASS。
+   --no-remove-listing     不要删除‘.listing’文件。
+   --no-glob               不在 FTP 文件名中使用通配符展开。
+   --no-passive-ftp        禁用“passive”传输模式。
+   --preserve-permissions  保留远程文件的权限。
+   --retr-symlinks         递归目录时，获取链接的文件 (而非目录)。</code></pre>
+<h6 id="WARC-options"><a href="#WARC-options" class="headerlink" title="WARC options:"></a>WARC options:</h6><pre><code>   --warc-file=FILENAME      save request/response data to a .warc.gz file.
+   --warc-header=STRING      insert STRING into the warcinfo record.
+   --warc-max-size=NUMBER    set maximum size of WARC files to NUMBER.
+   --warc-cdx                write CDX index files.
+   --warc-dedup=FILENAME     do not store records listed in this CDX file.
+   --no-warc-compression     do not compress WARC files with GZIP.
+   --no-warc-digests         do not calculate SHA1 digests.
+   --no-warc-keep-log        do not store the log file in a WARC record.
+   --warc-tempdir=DIRECTORY  location for temporary files created by the
+                             WARC writer.</code></pre>
+<h6 id="递归下载："><a href="#递归下载：" class="headerlink" title="递归下载："></a>递归下载：</h6><p>  -r,  –recursive          指定递归下载。<br>  -l,  –level=NUMBER       最大递归深度 (inf 或 0 代表无限制，即全部下载)。<br>       –delete-after       下载完成后删除本地文件。<br>  -k,  –convert-links      让下载得到的 HTML 或 CSS 中的链接指向本地文件。<br>  –backups=N   before writing file X, rotate up to N backup files.<br>  -K,  –backup-converted   在转换文件 X 前先将它备份为 X.orig。<br>  -m,  –mirror             -N -r -l inf –no-remove-listing 的缩写形式。<br>  -p,  –page-requisites    下载所有用于显示 HTML 页面的图片之类的元素。<br>       –strict-comments    用严格方式 (SGML) 处理 HTML 注释。</p>
+<h6 id="递归接受-拒绝："><a href="#递归接受-拒绝：" class="headerlink" title="递归接受/拒绝："></a>递归接受/拒绝：</h6><p>  -A,  –accept=LIST               逗号分隔的可接受的扩展名列表。<br>  -R,  –reject=LIST               逗号分隔的要拒绝的扩展名列表。<br>       –accept-regex=REGEX        regex matching accepted URLs.<br>       –reject-regex=REGEX        regex matching rejected URLs.<br>       –regex-type=TYPE           regex type (posix|pcre).<br>  -D,  –domains=LIST              逗号分隔的可接受的域列表。<br>       –exclude-domains=LIST      逗号分隔的要拒绝的域列表。<br>       –follow-ftp                跟踪 HTML 文档中的 FTP 链接。<br>       –follow-tags=LIST          逗号分隔的跟踪的 HTML 标识列表。<br>       –ignore-tags=LIST          逗号分隔的忽略的 HTML 标识列表。<br>  -H,  –span-hosts                递归时转向外部主机。<br>  -L,  –relative                  只跟踪有关系的链接。<br>  -I,  –include-directories=LIST  允许目录的列表。<br>  –trust-server-names             use the name specified by the redirection<br>                                   url last component.<br>  -X,  –exclude-directories=LIST  排除目录的列表。<br>  -np, –no-parent                 不追溯至父目录。</p>
+<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget -O wordpress.tar.gz  http://cn.wordpress.org/wordpress-4.9.4-zh_CN.tar.gz</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用 wget -O 下载并以不同的文件名保存</span></span><br><span class="line"></span><br><span class="line">wget –spider url</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用 wget –spider 测试下载链接</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sx66/p/11887022.html">来源链接</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://vvegetables.github.io/2020/11/06/scp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chongxu Zhao">
+      <meta itemprop="description" content="personal blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The way to CODE">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/06/scp/" class="post-title-link" itemprop="url">scp</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2020-11-06 15:05:11 / 修改时间：15:16:06" itemprop="dateCreated datePublished" datetime="2020-11-06T15:05:11+08:00">2020-11-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
+<p>Linux scp 命令用于 Linux 之间复制文件和目录。<br>scp 是 secure copy 的缩写, scp 是 linux 系统下基于 ssh 登陆进行安全的远程文件拷贝命令。<br>scp 是加密的，rcp 是不加密的，scp 是 rcp 的加强版。</p>
+</blockquote>
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><ul>
+<li>-1： 强制scp命令使用协议ssh1</li>
+<li>-2： 强制scp命令使用协议ssh2</li>
+<li>-4： 强制scp命令只使用IPv4寻址</li>
+<li>-6： 强制scp命令只使用IPv6寻址</li>
+<li>-B： 使用批处理模式（传输过程中不询问传输口令或短语）</li>
+<li>-C： 允许压缩。（将-C标志传递给ssh，从而打开压缩功能）</li>
+<li>-p：保留原文件的修改时间，访问时间和访问权限。</li>
+<li>-q： 不显示传输进度条。</li>
+<li>-r： 递归复制整个目录。</li>
+<li>-v：详细方式显示输出。scp和ssh(1)会显示出整个过程的调试信息。这些信息用于调试连接，验证和配置问题。</li>
+<li>-c cipher： 以cipher将数据传输进行加密，这个选项将直接传递给ssh。</li>
+<li>-F ssh_config： 指定一个替代的ssh配置文件，此参数直接传递给ssh。</li>
+<li>-i identity_file： 从指定文件中读取传输时使用的密钥文件，此参数直接传递给ssh。</li>
+<li>-l limit： 限定用户所能使用的带宽，以Kbit/s为单位。</li>
+<li>-o ssh_option： 如果习惯于使用ssh_config(5)中的参数传递方式，</li>
+<li>-P port：注意是大写的P, port是指定数据传输用到的端口号</li>
+<li>-S program： 指定加密传输时所使用的程序。此程序必须能够理解ssh(1)的选项。</li>
+</ul>
+<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scp local_file remote_username@remote_ip:remote_folder </span><br><span class="line">或者 </span><br><span class="line">scp local_file remote_username@remote_ip:remote_file </span><br><span class="line">或者 </span><br><span class="line">scp local_file remote_ip:remote_folder </span><br><span class="line">或者 </span><br><span class="line">scp local_file remote_ip:remote_file </span><br></pre></td></tr></table></figure>
+<p>第1,2个指定了用户名，命令执行后需要再输入密码，第1个仅指定了远程的目录，文件名字不变，第2个指定了文件名；<br>第3,4个没有指定用户名，命令执行后需要输入用户名和密码，第3个仅指定了远程的目录，文件名字不变，第4个指定了文件名；</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
     
 
 
@@ -1179,179 +1398,6 @@
 <li>W 将当前设置写入~/.toprc文件中</li>
 </ul>
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vvegetables.github.io/2020/10/24/htpasswd/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chongxu Zhao">
-      <meta itemprop="description" content="personal blog">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The way to CODE">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/24/htpasswd/" class="post-title-link" itemprop="url">htpasswd</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2020-10-24 17:23:21 / 修改时间：17:31:13" itemprop="dateCreated datePublished" datetime="2020-10-24T17:23:21+08:00">2020-10-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
-<p>htpasswd 是开源 http 服务器 apache httpd 的一个命令工具，用于生成 http 基本认证的密码文件。</p>
-</blockquote>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
-<li>ubuntu<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apache2-utils</span><br></pre></td></tr></table></figure></li>
-<li>centos<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install httpd</span><br></pre></td></tr></table></figure>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><h4 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">路径： 文件存储地址</span><br><span class="line">用户： 用户名</span><br><span class="line">密码： 用户的密码</span><br></pre></td></tr></table></figure>
-<h4 id="选项说明"><a href="#选项说明" class="headerlink" title="选项说明"></a>选项说明</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-c 创建passwdfile.如果passwdfile 已经存在,那么它会重新写入并删去原有内容.</span><br><span class="line">-n 不更新passwordfile，只将加密后的用户名密码显示在屏幕上；</span><br><span class="line">-m 默认采用MD5算法对密码进行加密</span><br><span class="line">-d 采用CRYPT算法对密码进行加密</span><br><span class="line">-p 不对密码进行进行加密，即使用普通文本格式的密码</span><br><span class="line">-s 采用SHA算法对密码进行加密</span><br><span class="line">-b 命令行中一并输入用户名和密码而不是根据提示输入密码，可以看见明文，不需要交互</span><br><span class="line">-D 删除指定的用户</span><br></pre></td></tr></table></figure>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">htpasswd -cbs pass.db username password</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://vvegetables.github.io/2020/10/14/open-files-too-many/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chongxu Zhao">
-      <meta itemprop="description" content="personal blog">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The way to CODE">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/14/open-files-too-many/" class="post-title-link" itemprop="url">错误异常too many open files解决办法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-10-14 12:58:14" itemprop="dateCreated datePublished" datetime="2020-10-14T12:58:14+08:00">2020-10-14</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-10-24 17:19:26" itemprop="dateModified" datetime="2020-10-24T17:19:26+08:00">2020-10-24</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h4><p>too many open files是Linux系统中常见的错误，从字面意思上看就是说程序打开的文件数过多，不过这里的files不单是文件的意思，也包括打开的通讯链接(比如socket)，正在监听的端口等等，所以有时候也可以叫做句柄(handle)，这个错误通常也可以叫做句柄数超出系统限制。因为每个用户有规定打开的文件数量。</p>
-<h4 id="查看系统中设置的值"><a href="#查看系统中设置的值" class="headerlink" title="查看系统中设置的值"></a>查看系统中设置的值</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/sys/fs/file-max</span><br><span class="line">or</span><br><span class="line">ulimit -a or</span><br><span class="line">ulimit -n</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="查看每个进程的句柄"><a href="#查看每个进程的句柄" class="headerlink" title="查看每个进程的句柄"></a>查看每个进程的句柄</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -n|awk &#x27;&#123;print $2&#125;&#x27;|sort|uniq -c|sort -nr|more</span><br></pre></td></tr></table></figure>
-<h4 id="查看系统打开句柄最大数量"><a href="#查看系统打开句柄最大数量" class="headerlink" title="查看系统打开句柄最大数量"></a>查看系统打开句柄最大数量</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more /proc/sys/fs/file-max</span><br></pre></td></tr></table></figure>
-<h4 id="查看打开句柄总数"><a href="#查看打开句柄总数" class="headerlink" title="查看打开句柄总数"></a>查看打开句柄总数</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof|awk &#x27;&#123;print $2&#125;&#x27;|wc -l</span><br></pre></td></tr></table></figure>
-
-<h4 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h4><h5 id="1-命令方式"><a href="#1-命令方式" class="headerlink" title="1. 命令方式"></a>1. 命令方式</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ulimit -n 2048</span><br></pre></td></tr></table></figure>
-
-<h5 id="2-修改系统配置文件"><a href="#2-修改系统配置文件" class="headerlink" title="2. 修改系统配置文件"></a>2. 修改系统配置文件</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/security/limits.conf  </span><br><span class="line"><span class="meta">#</span><span class="bash">在最后加入  </span></span><br><span class="line">* soft nofile 4096  </span><br><span class="line">* hard nofile 4096  </span><br><span class="line"><span class="meta">#</span><span class="bash">或者只加入</span></span><br><span class="line"></span><br><span class="line"> * - nofile 8192</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">最前的 * 表示所有用户，可根据需要设置某一用户，例如</span></span><br><span class="line"></span><br><span class="line">roy soft nofile 8192  </span><br><span class="line">roy hard nofile 8192  </span><br><span class="line"><span class="meta">#</span><span class="bash">注意”nofile”项有两个可能的限制措施。就是项下的hard和soft。 要使修改过得最大打开文件数生效，必须对这两种限制进行设定。 如果使用”-“字符设定, 则hard和soft设定会同时被设定。</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
